@@ -1,0 +1,29 @@
+.nav-container {
+    display: flex;
+    justify-content:space-around
+}
+
+.li-container > ul {
+    display: flex;
+    padding: 15px;
+    
+}
+
+.li-container > ul > li {
+    margin: 0 40px;
+    
+}
+
+.li-container > ul > li > Button {
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+
+
+.li-container > ul > li > Button:hover {
+    border-bottom: 1px solid #ccc;
+
+}

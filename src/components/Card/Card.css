@@ -1,0 +1,35 @@
+
+
+.card-container {
+    margin-top: 50px;
+    
+}
+
+.div-container {
+    padding: 0 5px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.price-container > button {
+    width: 80%;
+    background-color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.title-card > span {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.price-container > span {
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
