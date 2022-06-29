@@ -2,22 +2,21 @@ import CardItem from '../Card/Card';
 import { Container, Grid } from '@mui/material';
 
 
-const CardList = () => {
+const CardList = ({ products }) => {
+
     return (
        
         <Container>
             <Grid container >
-            <Grid item md={4}>
-                <CardItem title={"Zapatillas Nike Airforce"} price={32000} image={"air.png"} />
-            </Grid>
-
-            <Grid item md={4}>
-                <CardItem title={"Zapatillas Nike Blazer"} price={28000} image={"blazer.png"} />
-            </Grid>
-
-            <Grid item md={4}>
-                <CardItem title={"Zapatillas Vans Old Skool"} price={14000} image={"vans.jpg"} />
-            </Grid>
+                {
+                    products.map( ({title, price, image, id, stock}) => {
+                        return (
+                            <Grid item md={4} key={id}>
+                                <CardItem title={title} price={price} image={image} stock={stock} id={id} />
+                            </Grid>
+                        )
+                    })
+                }
             </Grid>
         </Container>
 

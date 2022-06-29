@@ -1,4 +1,6 @@
-
+.card-container > cardmedia > image{
+    width: 50px;
+}
 
 .card-container {
     margin-top: 50px;
@@ -20,6 +22,7 @@
     background-color: #333;
     font-weight: 600;
     font-size: 15px;
+    margin-top: 10px;
 }
 
 .title-card > span {
@@ -28,8 +31,34 @@
 }
 
 .price-container > span {
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     font-weight: 600;
     font-size: 18px;
 }
 
+.dark-container-card {
+    background-color: #333 !important;
+    border: 1px solid rgb(126, 232, 166);
+}
+
+
+.dark-title {
+    color: #2e7d32;
+    border-top: 1px solid rgb(126, 232, 166);
+}
+
+.dark-price {
+    color: #fff;
+}
+
+.dark-button  {
+    background-color: #2e7d32 !important;
+}
+
+.dark-button:hover  {
+    background-color: rgb(126, 232, 166) !important;   
+}
+
+.dark-button > a:hover {
+    color: #444;
+}

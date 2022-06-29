@@ -1,0 +1,65 @@
+.grid-text > button {
+    margin-top: 20px;
+    width: 20%;
+    background-color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+p {
+    font-weight: bold;
+}
+
+.span-cuotas {
+    color: #ccc;
+}
+
+.button-talle > button {
+    background-color: #333;
+    font-weight: 600;
+}
+
+.container-color-blue {
+    background-color: blue;
+    width: 20px; height: 20px;
+    border-radius: 100px 100px;
+    color: blue;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.container-color > button {
+    border: none;
+}
+
+
+.container-color-black {
+    background-color: #333;
+    width: 20px; height: 20px;
+    border-radius: 100px 100px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.container-color-blue:hover {
+    box-shadow: 1px 1px 20px 2px rgb(163, 162, 162);
+}
+
+.container-color-black:hover {
+    box-shadow: 1px 1px 20px 2px rgb(163, 162, 162);
+}
+
+
+.container-color {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: rgba(204, 204, 204, 0.686);
+    padding: 5px;
+    width: 135px;
+    margin-left: auto; margin-right: auto;
+    border-radius: 10px 10px;
+}
+
+
