@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../context/ThemeContext';
 import { useContext } from 'react';
 
-const CardItem = ({ image, title, price, id }) => {
+const CardItem = ({ image, title, price, id, stock }) => {
     
     const { darkTheme } = useContext(ThemeContext)
 
@@ -19,8 +19,9 @@ const CardItem = ({ image, title, price, id }) => {
                 <CardMedia
                     component="img"
                     height="450"
-                    image={`./${image}`}
+                    image={`/${image}`}
                     alt="Zapatillas Nike Airforce"
+                    className='img-card'
                 />
                 
                 <CardContent className={`title-card ${darkTheme ? 'dark-title' : ''}`}>

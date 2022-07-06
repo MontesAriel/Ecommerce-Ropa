@@ -1,0 +1,51 @@
+
+.Header-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #DCEAF2;
+}
+
+.title {
+    color: #9AEBA3;
+}
+
+.Header-img {
+    text-align: center;
+}
+
+.Header-img > img {
+    height: 600px;
+    width: 500px;
+    border-radius: 80px 80px 0px 0px;
+    margin: 20px;
+    box-shadow: .5px .5px 7px rgb(126, 232, 166);
+    
+}
+
+.Header-title > span {
+    display: block;
+  }
+
+.Button-contact{
+    background-color: #9AEBA3;
+    color: #012030;
+    padding: 10px;
+    border: 1px solid #9AEBA3;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Button-cv{
+    color: rgb(126, 232, 166);
+    padding: 10px;
+    margin: 20px 20px 5px 0px;
+    border: 1px solid rgb(126, 232, 166);
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #012030;
+    border-radius: 10px;
+}

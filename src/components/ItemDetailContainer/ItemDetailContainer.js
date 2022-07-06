@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import productos, { producto } from "../../utils/productsMock";
 import { useParams, useNavigate } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../utils/FirebaseConfig";
 
 const ItemDetailContainer = () => {
 
@@ -18,17 +20,26 @@ const ItemDetailContainer = () => {
     // }
 
     useEffect ( () => {
-        // getItem()
-        // .then( (res) => {
-        //     console.log(res)
-        //     setProduct(res)
-        // })
-        if(productFilter){
-            setProduct(productFilter)
-        } else {
-            navigate('/NotFound')
-        }
+        
+        getProduct()
+        .then( (prod) => {
+            console.log(prod)
+            setProduct(prod)
+        })
+        // if(productFilter){
+        //     setProduct(productFilter)
+        // } else {
+        //     navigate('/NotFound')
+        // }
     },[id])
+
+    const getProduct = async() => {
+        const docRef = doc(db, "productos", id)
+        const docSnaptshop = await getDoc(docRef)
+        let product = docSnaptshop.data()
+        product.id = docSnaptshop.id
+        return product
+    }
 
     const productFilter = productos.find( (product) => {
         return product.id == id;

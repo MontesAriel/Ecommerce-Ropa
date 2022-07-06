@@ -1,0 +1,15 @@
+
+.footer-container {
+   
+    position: fixed;
+    bottom: 50px;
+    
+    margin: 0 700px !important;
+    
+}
+
+
+.footer {
+    background-color: rgba(204, 204, 204, 0.391) !important;
+    border-radius: 40px !important;
+}

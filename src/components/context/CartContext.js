@@ -5,18 +5,28 @@ const CartContext = createContext()
 const CartProvider = ({children}) => {
 
     const [ cartListItems, setCartListItems ] = useState([])
-    
-    const addProductToCart = (product) => {
-        console.log("Se agrego el producto: ", product)
-        let isInCart = cartListItems.find(cartItems => cartItems.id === product.id)
+    const [ totalPrice, setTotalPrice ] =useState(0)
+
+    const addProductToCart = (data) => {
+        console.log("Se agrego el producto: ", data)
+
+        let isInCart = cartListItems.find(cartItems => cartItems.id === data.id)
         if(!isInCart) {
-            setCartListItems(cartListItems => [...cartListItems, product])
+            setTotalPrice(totalPrice + data.data.price)
+            return setCartListItems(cartListItems => [...cartListItems, data])
         }
+    }
+
+    const cleanCartProducts = () => {
+        setTotalPrice(0)
+        setCartListItems([])
     }
 
     const data = {
         cartListItems,
-        addProductToCart
+        addProductToCart,
+        totalPrice,
+        cleanCartProducts
     }
 
     return (

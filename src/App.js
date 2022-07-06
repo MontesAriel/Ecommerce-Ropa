@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import  ThemeProvider  from './components/context/ThemeContext';
 import { CartProvider } from './components/context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   
@@ -23,9 +24,9 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/contacto' element={ <Contact />} />
-                <Route path='/preguntas-frecuentes' element={<Questions />}/>
                 <Route path='/productos' element={ <Products />} />
                 <Route path='/producto/:id' element={<Detail />} />
+                <Route path='/cart' element={<Cart />}/>
                 <Route path='*' element={<NotFound />}/>
               </Routes>  
           </BrowserRouter>

@@ -1,6 +1,7 @@
 import CardList from "../components/CardList/CardList";
 import { useState, useEffect } from 'react';
 import productos from '../utils/productsMock'
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
 const Products = () => {
 
@@ -24,7 +25,7 @@ const Products = () => {
             console.log("Fallo la llamada.")
         })
         .finally( () => {
-    
+            LoaderComponent()
         })
   
     }, [])

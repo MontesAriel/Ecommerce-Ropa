@@ -1,7 +1,7 @@
 import './ItemCount.css'
 import { Button } from '@mui/material';
 
-const ItemCount = ({cantidad, setCantidad}) => {
+const ItemCount = ({cantidad, setCantidad, data }) => {
     
     
 
@@ -12,8 +12,9 @@ const ItemCount = ({cantidad, setCantidad}) => {
     }
 
     const addCount = () => {
-        if(cantidad < 2) {
+        if(cantidad < data.stock) {
             setCantidad(cantidad + 1)
+            console.log("data.stock ", data)
         }
     }
     return(

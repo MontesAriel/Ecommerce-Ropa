@@ -5,9 +5,12 @@ import Menu from '@mui/material/Menu';
 import { useState, useContext } from 'react';
 import CartContext from '../context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from 'react-router-dom';
+
 
 const CartWidget = () => {
 
+    const navigate = useNavigate()
     const [anchorEl, setAnchorEl] = useState(null);
     const { cartListItems } = useContext(CartContext)
     const open = Boolean(anchorEl);
@@ -17,7 +20,12 @@ const CartWidget = () => {
     const handleClose = () => {
       setAnchorEl(null);
     };
-  
+
+    const goToCart = () => {
+      navigate('/cart')
+      
+    }
+    
     return (
       <div>
         <ShoppingCartIcon
@@ -26,8 +34,6 @@ const CartWidget = () => {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
-        
-          Dashboard
         />
         <Menu
           id="basic-menu"
@@ -43,10 +49,10 @@ const CartWidget = () => {
               {cartListItems.length === 0 && (
               <p>No hay productos agregados.</p>
               )}
-          {cartListItems.map( ({data}) => {
+          {cartListItems.map( ({data}, index) => {
               return(
-                <>
-                    <div className='cart-container' key={data.id}>
+                <div key={index}>
+                    <div className='cart-container'>
                         <div className='cart-img'>
                             <img src={`/${data.image}`}></img>
                         </div>
@@ -63,10 +69,11 @@ const CartWidget = () => {
                     <Button 
                         className='finalizar-compra'
                         color='success'
+                        onClick={goToCart}
                     >
-                        Terminar Compra
+                       Terminar Compra
                     </Button>
-                </>
+                </div>
               )
           })}
           

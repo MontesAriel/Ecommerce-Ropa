@@ -12,76 +12,80 @@ const ItemDetail = ({data}) => {
     
     const { addProductToCart } = useContext(CartContext)
 
-    const [ color, setColor ]= useState('#2e7d32')
     const [cantidad, setCantidad] = useState(1)
+    const [ color, setColor ]= useState(false)
 
 
     return(
         <div>
-            
-            <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={3}>
+                    
+            <Box sx={{ flexGrow: 1 }} className='container'>
+                <Grid container spacing={3}>
 
-        <Grid item xs={6}>
-            <img src={`/${data.image}`}></img>
-        </Grid>
-        <Grid item xs >
-            <h2>{data.title}</h2>
-            <h4>Talles</h4>
-            <ButtonGroup variant="contained" color='success' className='button-talle'>
-                
-                <Button  onClick={()=>setColor(!color)}
-                 style={{background:color ? '#333':'#2e7d32'}}>
-                     39
-                </Button>
-                <Button onClick={()=>setColor(!color)}
-                 style={{background:color ? '#333':'#2e7d32'}}>
-                     39.5
-                </Button>
-                <Button onClick={()=>setColor(!color)}
-                 style={{background:color ? '#333':'#2e7d32'}}>
-                     40
-                </Button>
-                <Button onClick={()=>setColor(!color)}
-                 style={{background:color ? '#333':'#2e7d32'}}>
-                     41
-                </Button>
-            </ButtonGroup>
+                    <Grid item xs={6} className="container-img">
+                        <img src={`/${data.image}`}></img>
+                    </Grid>
+                    <Grid item xs  className='info-container'>
+                        <h2>{data.title}</h2>
+                        <h4>Talles</h4>
 
-            <div>
-                <h4>Color</h4>
-                <div className='container-color'>
-                    <button className='container-color-blue'></button>
-                    <button className='container-color-black'></button> 
-                </div>
-            </div>
-            
-                <h4>Descripción</h4>
-                <li>{data.description}</li>
+                        <ButtonGroup variant="contained" color='success' className='button-talle'>                 
+                            <Button className={color ? 'talle-green' : null}
+                                onClick={() => setColor(color)}>
+                                39
+                            </Button>
+                            
+                            <Button className={color ? 'talle-green' : null}
+                                onClick={() => setColor(color)}>
+                                39.5
+                            </Button>
 
-            <p>${data.price}</p>
+                            <Button className={color ? 'talle-green' : null}
+                                onClick={() => setColor(color)}>
+                                40
+                            </Button>
+                            <Button className={color ? 'talle-green' : null}
+                                onClick={() => setColor(color)}>
+                                41
+                            </Button>
+                        </ButtonGroup>
 
-            <span className='span-cuotas'>3 cuotas sin interés de ${data.price / 3}</span>
+                        <div>
+                            <h4>Color</h4>
+                            <div className='container-color'>
+                                <button className='container-color-blue'></button>
+                                <button className='container-color-black'></button> 
+                            </div>
+                        </div>
 
-            <ItemCount
-                cantidad={cantidad} 
-                setCantidad={setCantidad} 
-            />
+                        <div className='description'>
+                            <h4>Descripción</h4>
+                            <li>{data.description}</li>
+                        </div>
+
+                        <p>${data.price}</p>
+
+                        <span className='span-cuotas'>3 cuotas sin interés de ${Math.floor(data.price / 3)}</span>
+
+                        <ItemCount
+                            cantidad={cantidad} 
+                            setCantidad={setCantidad} 
+                        />
 
 
-            <div className='grid-text'>
-                <Button 
-                size="small" 
-                variant='contained' 
-                color='success'
-                onClick={() => addProductToCart({data})}
-                >
-                    Agregar al Carrito
-                </Button>
-            </div>
-        </Grid>
-      </Grid>
-    </Box>
+                        <div className='grid-text'>
+                            <Button 
+                            size="small" 
+                            variant='contained' 
+                            color='success'
+                            onClick={() => addProductToCart({data})}
+                            >
+                                Agregar al Carrito
+                            </Button>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Box>
         </div>
     )
 }

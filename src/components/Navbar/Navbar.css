@@ -1,6 +1,8 @@
 .nav-container {
     display: flex;
-    justify-content:space-around
+    justify-content:space-around;
+    position: fixed;
+  
 }
 
 .li-container > ul {

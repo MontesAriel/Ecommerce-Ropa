@@ -1,6 +1,8 @@
 import CardList from "../components/CardList/CardList";
 import { useState, useEffect } from 'react';
 import productos from '../utils/productsMock'
+import Carrousel from "../components/Carrousel/Carrousel";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
 
@@ -32,7 +34,10 @@ const Home = () => {
 
     return (
         <>
+            <Carrousel />
+            <h2 style={{fontSize:40, color:"white"}}>Productos Destacados</h2>
             <CardList products={products} />
+            <Footer />
         </>
     )
 }

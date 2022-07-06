@@ -8,15 +8,13 @@ import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import CartWidget from '../CartWidget/CartWidget'
 import CustomizedSwitches from './ThemeSwitch/ThemeSwitch'
+import Contact from '../../pages/Contact';
 
 
 const Navbar = () => {
 
-    const [open, setOpen] = useState(false)
-  
-    const handleClose = () => {
-      setOpen(false)
-    }
+
+
 
     const darkTheme = createTheme({
         palette: {
@@ -27,11 +25,13 @@ const Navbar = () => {
         },
       });
 
+
+
       
     return (
        
         <ThemeProvider theme={darkTheme}>
-            <AppBar position="static">
+            <AppBar>
                 <Toolbar className='nav-container'>
         
                     <div> 
@@ -50,39 +50,28 @@ const Navbar = () => {
                                     </Link>
                                 </Button>
                             </li>
+
                             <li>
                                 <Button variant='none'
                                 disableRipple
                                 style={{backgroundColor: 'transparent'}} 
                                 >
                                     <Link to='/productos'>
-                                        Productos
+                                    Productos
                                     </Link>
                                 </Button>
                             </li>
+
                             <li>
                                 <Button variant='none'
                                 disableRipple
-                                style={{backgroundColor: 'transparent'}} 
+                                style={{backgroundColor: 'transparent'}}
+                                 
                                 >
                                     <Link to='/contacto'>
                                         Contacto
                                     </Link>
                                 </Button>
-                            </li>
-                            <li>
-                                <Button variant='none'
-                                disableRipple
-                                style={{backgroundColor: 'transparent'}} 
-                                onClick={() => setOpen(true)}
-                                >
-                                    <Link to='/preguntas-frecuentes'>
-                                    Preguntas Frecuentes
-                                    </Link>
-                                </Button>
-                                <Modal handleClose={handleClose} open={open}>
-                                    <span>Preguntas Frecuentes</span>
-                                </Modal>
                             </li>
                         </ul>
                     </div>

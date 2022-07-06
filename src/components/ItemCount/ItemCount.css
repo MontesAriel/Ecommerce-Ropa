@@ -4,7 +4,8 @@
    border-top: 1px solid #ccc;
    border-bottom: 1px solid #ccc;
    margin-bottom: 10px;
-   width: 100%;
+   margin-left: auto; margin-right: auto;
+   width: 720px;
     
 }
 
@@ -16,3 +17,4 @@
 .contador > p {
     font-weight: bold;
 }
+

@@ -62,4 +62,18 @@ p {
     border-radius: 10px 10px;
 }
 
+.description {
+    margin: 0 100px;
+}
 
+.container {
+    margin-top: 120px ;
+}
+
+.talle-green {
+    background-color: #2e7d32 !important;
+}
+
+.container-img > img {
+    width: 70%;
+}
